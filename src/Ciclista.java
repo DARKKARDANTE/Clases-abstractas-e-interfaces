@@ -1,59 +1,55 @@
-import java.sql.SQLOutput;
+public class Ciclista extends Atleta implements Evaluable {
 
-public class Futbol extends Deporte implements AccionesDeportivas{
+    private int tiempoHoras;
+    private double kmRecorridos;
 
-    private int marcador;
-    private int goles;
 
     @Override
-    public void compitor() {
-        System.out.println("Estamos compitiendo en futbol");
+    public void calcularRendimiento() {
 
     }
 
     @Override
-    public void entrenar() {
-        System.out.println("estamos entrenando futbol");
-
+    public String clasificarNivel() {
+        return "";
     }
 
     @Override
-    public void mostrarReglas() {
-        System.out.println("las reglas son jugar con los pies");
-
+    public double calcularBono() {
+        return 0;
     }
 
-    public Futbol() {
-
+    public Ciclista() {
     }
 
-    public Futbol(String jugeador, int dorsal, double porcentajeFatiga, int marcador, int goles) {
-        super(jugeador, dorsal, porcentajeFatiga);
-        this.marcador = marcador;
-        this.goles = goles;
+    public Ciclista(String nombre, int edad, int horasEntrenamiento, int tiempoHoras, double kmRecorridos) {
+        super(nombre, edad, horasEntrenamiento);
+        this.tiempoHoras = tiempoHoras;
+        this.kmRecorridos = kmRecorridos;
     }
 
-    public int getMarcador() {
-        return marcador;
+    public int getTiempoHoras() {
+        return tiempoHoras;
     }
 
-    public void setMarcador(int marcador) {
-        this.marcador = marcador;
+    public void setTiempoHoras(int tiempoHoras) {
+        this.tiempoHoras = tiempoHoras;
     }
 
-    public int getGoles() {
-        return goles;
+    public double getKmRecorridos() {
+        return kmRecorridos;
     }
 
-    public void setGoles(int goles) {
-        this.goles = goles;
+    public void setKmRecorridos(double kmRecorridos) {
+        this.kmRecorridos = kmRecorridos;
     }
 
     @Override
     public String toString() {
-        return "Futbol{" +
-                "marcador=" + marcador +
-                ", goles=" + goles +
+        return "Ciclista{" +
+                "tiempoHoras=" + tiempoHoras +
+                ", kmRecorridos=" + kmRecorridos +
                 '}';
     }
+
 }

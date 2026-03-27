@@ -1,5 +1,5 @@
-public interface AccionesDeportivas {
+public interface Evaluable {
 
-    void compitor();
-    void entrenar();
+    public String clasificarNivel();
+    public double calcularBono();
 }

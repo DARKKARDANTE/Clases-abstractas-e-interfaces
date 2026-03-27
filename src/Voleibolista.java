@@ -1,55 +1,52 @@
-public class Natacion extends Deporte implements AccionesDeportivas{
-    private double distanciaRecorrida;
-    private double tiempo;
-    @Override
-    public void compitor() {
-        System.out.println("estamos compitiendo en natacion");
-
-    }
+public class Voleibolista extends Atleta implements Evaluable {
+    private String posicion;
+    private int bloqueos;
 
     @Override
-    public void entrenar() {
-        System.out.println("estamos entrenando natacion");
+    public void calcularRendimiento() {
 
     }
 
     @Override
-    public void mostrarReglas() {
-        System.out.println("no se permite que los deportistas se ahoguen");
-
+    public String clasificarNivel() {
+        return "";
     }
 
-    public Natacion() {
+    @Override
+    public double calcularBono() {
+        return 0;
     }
 
-    public Natacion(String jugeador, int dorsal, double porcentajeFatiga, double distanciaRecorrida, double tiempo) {
-        super(jugeador, dorsal, porcentajeFatiga);
-        this.distanciaRecorrida = distanciaRecorrida;
-        this.tiempo = tiempo;
-
+    public Voleibolista() {
     }
 
-    public double getDistanciaRecorrida() {
-        return distanciaRecorrida;
+    public Voleibolista(String nombre, int edad, int horasEntrenamiento, String posicion, int bloqueos) {
+        super(nombre, edad, horasEntrenamiento);
+        this.posicion = posicion;
+        this.bloqueos = bloqueos;
     }
 
-    public void setDistanciaRecorrida(double distanciaRecorrida) {
-        this.distanciaRecorrida = distanciaRecorrida;
+    public String getPosicion() {
+        return posicion;
     }
 
-    public double getTiempo() {
-        return tiempo;
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
     }
 
-    public void setTiempo(double tiempo) {
-        this.tiempo = tiempo;
+    public int getBloqueos() {
+        return bloqueos;
+    }
+
+    public void setBloqueos(int bloqueos) {
+        this.bloqueos = bloqueos;
     }
 
     @Override
     public String toString() {
-        return "Natacion{" +
-                "distanciaRecorrida=" + distanciaRecorrida +
-                ", tiempo=" + tiempo +
+        return "Voleibolista{" +
+                "posicion='" + posicion + '\'' +
+                ", bloqueos=" + bloqueos +
                 '}';
     }
 }
