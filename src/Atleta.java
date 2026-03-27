@@ -1,22 +1,24 @@
-public abstract class Deporte {
-    protected String jugador;
-    protected  int dorsal ;
-    protected  double porcentajeFatiga;
+public abstract class Atleta {
+    protected String Nombre;
+    protected  int edad ;
+    protected  int horasEntrenamiento;
 
-    public Deporte() {
+    public Atleta() {
     }
 
-    public Deporte(String jugador, int dorsal, double porcentajeFatiga) {
-        this.jugador = jugador;
-        this.dorsal = dorsal;
-        this.porcentajeFatiga = porcentajeFatiga;
+    public Atleta(String nombre, int edad, int horasEntrenamiento) {
+        this.Nombre = nombre;
+        this.edad = edad;
+        this.horasEntrenamiento = horasEntrenamiento;
     }
 
-    public void mostrarInfo(){
-        System.out.println("jugador "+ jugador);
-        System.out.println("dorsal  "+ dorsal);
-        System.out.println("Porcentaje de fatiga "+ porcentajeFatiga);
+
+
+    public void mostrarDatos(){
+        System.out.println("Nombre "+ Nombre);
+        System.out.println("Edad  "+ edad);
+        System.out.println("Horas de entrenamiento "+ horasEntrenamiento);
     }
 
-    public abstract void mostrarReglas();
+    public abstract void calcularRendimiento();
 }
