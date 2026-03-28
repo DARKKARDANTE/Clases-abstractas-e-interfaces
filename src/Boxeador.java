@@ -1,38 +1,44 @@
     public class Boxeador extends Atleta implements Evaluable {
 
-        private String categoriaPeso;
+        private int golpesAcertados;
         private int combatesGanados;
 
         @Override
-        public void calcularRendimiento() {
-
+        public double calcularRendimiento() {
+            return (golpesAcertados * 0.5) + (combatesGanados * 10);
         }
 
         @Override
         public String clasificarNivel() {
-            return "";
+            double r = calcularRendimiento();
+            if (r < 30) return "Básico";
+            else if (r <= 70) return "Competente";
+            else return "Elite";
         }
 
         @Override
         public double calcularBono() {
-            return 0;
+            double nivel = calcularRendimiento();
+            if (nivel < 30) return 50000;
+            else if (nivel <= 70) return 150000;
+            else return 300000;
         }
 
         public Boxeador() {
         }
 
-        public Boxeador(String nombre, int edad, int horasEntrenamiento, String categoriaPeso, int combatesGanados) {
+        public Boxeador(String nombre, int edad, int horasEntrenamiento, int golpesAcertados, int combatesGanados) {
             super(nombre, edad, horasEntrenamiento);
-            this.categoriaPeso = categoriaPeso;
+            this.golpesAcertados = golpesAcertados;
             this.combatesGanados = combatesGanados;
         }
 
-        public String getCategoriaPeso() {
-            return categoriaPeso;
+        public int getgolpesAcertados() {
+            return golpesAcertados;
         }
 
-        public void setCategoriaPeso(String categoriaPeso) {
-            this.categoriaPeso = categoriaPeso;
+        public void setgolpesAcertados(int golpesAcertados) {
+            this.golpesAcertados = golpesAcertados;
         }
 
         public int getCombatesGanados() {
@@ -46,7 +52,7 @@
         @Override
         public String toString() {
             return "Boxeador{" +
-                    "categoriaPeso='" + categoriaPeso + '\'' +
+                    "golpesAcertados='" + golpesAcertados + '\'' +
                     ", combatesGanados=" + combatesGanados +
                     '}';
         }

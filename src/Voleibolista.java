@@ -1,37 +1,44 @@
 public class Voleibolista extends Atleta implements Evaluable {
-    private String posicion;
+    private int saquesEfectivos;
     private int bloqueos;
 
     @Override
-    public void calcularRendimiento() {
+    public double calcularRendimiento() {
+        return (saquesEfectivos*2)+(bloqueos*3);
 
     }
 
     @Override
     public String clasificarNivel() {
-        return "";
+        double r = calcularRendimiento();
+        if (r < 30) return "Básico";
+        else if (r <= 70) return "Competente";
+        else return "Elite";
     }
 
     @Override
     public double calcularBono() {
-        return 0;
+        double nivel = calcularRendimiento();
+        if (nivel < 30) return 50000;
+        else if (nivel <= 70) return 150000;
+        else return 300000;
     }
 
     public Voleibolista() {
     }
 
-    public Voleibolista(String nombre, int edad, int horasEntrenamiento, String posicion, int bloqueos) {
+    public Voleibolista(String nombre, int edad, int horasEntrenamiento, int saquesEfectivos, int bloqueos) {
         super(nombre, edad, horasEntrenamiento);
-        this.posicion = posicion;
+        this.saquesEfectivos = saquesEfectivos;
         this.bloqueos = bloqueos;
     }
 
-    public String getPosicion() {
-        return posicion;
+    public int getsaquesEfectivos() {
+        return saquesEfectivos;
     }
 
-    public void setPosicion(String posicion) {
-        this.posicion = posicion;
+    public void setsaquesEfectivos(int saquesEfectivos) {
+        this.saquesEfectivos = saquesEfectivos;
     }
 
     public int getBloqueos() {
@@ -45,7 +52,7 @@ public class Voleibolista extends Atleta implements Evaluable {
     @Override
     public String toString() {
         return "Voleibolista{" +
-                "posicion='" + posicion + '\'' +
+                "saquesEfectivos='" + saquesEfectivos + '\'' +
                 ", bloqueos=" + bloqueos +
                 '}';
     }
