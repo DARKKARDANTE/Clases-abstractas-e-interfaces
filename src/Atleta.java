@@ -20,9 +20,5 @@ public abstract class Atleta {
         System.out.println("Horas de entrenamiento "+ horasEntrenamiento);
     }
 
-<<<<<<< HEAD
     public abstract double calcularRendimiento();
-=======
-    public abstract void calcularRendimiento();
->>>>>>> c7c0cb4a8554556829b2f4836ca445791dcd4424
 }
