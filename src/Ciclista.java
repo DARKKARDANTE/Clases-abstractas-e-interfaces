@@ -5,25 +5,37 @@ public class Ciclista extends Atleta implements Evaluable {
 
 
     @Override
+<<<<<<< HEAD
     public double calcularRendimiento() {
         return  kmRecorridos/tiempoHoras;
+=======
+    public void calcularRendimiento() {
+>>>>>>> c7c0cb4a8554556829b2f4836ca445791dcd4424
 
     }
 
     @Override
     public String clasificarNivel() {
+<<<<<<< HEAD
         double r = calcularRendimiento();
         if (r < 30) return "Básico";
         else if (r <= 70) return "Competente";
         else return "Elite";
+=======
+        return "";
+>>>>>>> c7c0cb4a8554556829b2f4836ca445791dcd4424
     }
 
     @Override
     public double calcularBono() {
+<<<<<<< HEAD
         double nivel = calcularRendimiento();
         if (nivel < 30) return 50000;
         else if (nivel <= 70) return 150000;
         else return 300000;
+=======
+        return 0;
+>>>>>>> c7c0cb4a8554556829b2f4836ca445791dcd4424
     }
 
     public Ciclista() {
